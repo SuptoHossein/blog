@@ -44,7 +44,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($categories as $key => $category)
+                                @forelse ($categories as $key => $category)
                                     <tr>
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ $category->name }}</td>
@@ -60,7 +60,11 @@
                                             </form>
                                         </td>
                                     </tr>
-                                @endforeach
+                                @empty
+                                    <tr>
+                                       <td colspan="5" class="text-danger text-center">No Categories found</td>
+                                    </tr>
+                                @endforelse
                             </tbody>
                         </table>
                     </div>
