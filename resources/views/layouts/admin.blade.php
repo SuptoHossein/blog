@@ -4,15 +4,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
     <title>AdminLTE 3 | Starter</title>
 
-    <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="{{ asset('admin') }}/plugins/fontawesome-free/css/all.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('admin') }}/dist/css/adminlte.min.css">
+    <!-- Toster css -->
+    <link rel="stylesheet" href="{{ asset('admin') }}/dist/css/toastr.min.css">
+    <!-- Google Font: Source Sans Pro -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    @yield('style')
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -33,31 +37,21 @@
                 </li>
             </ul>
 
+            <!-- SEARCH FORM -->
+            <form class="form-inline ml-3">
+                <div class="input-group input-group-sm">
+                    <input class="form-control form-control-navbar" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <div class="input-group-append">
+                        <button class="btn btn-navbar" type="submit">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
-                <!-- Navbar Search -->
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="navbar-search" href="#" role="button">
-                        <i class="fas fa-search"></i>
-                    </a>
-                    <div class="navbar-search-block">
-                        <form class="form-inline">
-                            <div class="input-group input-group-sm">
-                                <input class="form-control form-control-navbar" type="search" placeholder="Search"
-                                    aria-label="Search">
-                                <div class="input-group-append">
-                                    <button class="btn btn-navbar" type="submit">
-                                        <i class="fas fa-search"></i>
-                                    </button>
-                                    <button class="btn btn-navbar" type="button" data-widget="navbar-search">
-                                        <i class="fas fa-times"></i>
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </li>
-
                 <!-- Messages Dropdown Menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link" data-toggle="dropdown" href="#">
@@ -148,26 +142,19 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
-                        <i class="fas fa-expand-arrows-alt"></i>
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button">
-                        <i class="fas fa-th-large"></i>
-                    </a>
+                    <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#" role="button"><i
+                            class="fas fa-th-large"></i></a>
                 </li>
             </ul>
         </nav>
         <!-- /.navbar -->
 
+        <!-- Main Sidebar Container -->
         @include('layouts.sidebar')
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
-            <!-- Content Header (Page header) -->
             @yield('content')
-            <!-- /.content -->
         </div>
         <!-- /.content-wrapper -->
 
@@ -188,7 +175,7 @@
                 Anything you want
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; 2014-2021 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
+            <strong>Copyright &copy; 2014-2019 <a href="https://adminlte.io">AdminLTE.io</a>.</strong> All rights
             reserved.
         </footer>
     </div>
@@ -202,6 +189,21 @@
     <script src="{{ asset('admin') }}/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('admin') }}/dist/js/adminlte.min.js"></script>
+    <!-- Toster js -->
+    <script src="{{ asset('admin') }}/dist/js/toastr.min.js"></script>
+    <!-- Custom file input js -->
+    <script src="{{ asset('admin') }}/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+    @yield('script')
+    <script>
+        @if(Session::has('success'))
+        toastr.success("{{ Session::get('success') }}")
+        @endif
+
+        // $(document).ready(function () {
+        //     bsCustomFileInput.init();
+        // });
+
+    </script>
 </body>
 
 </html>

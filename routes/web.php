@@ -21,7 +21,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
 
 Route::get('/', function() {
     return view('website.home');
-});
+})->name('website');
 
 Route::get('/about', function() {
     return view('website.about');
