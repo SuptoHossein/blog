@@ -111,7 +111,7 @@ class CategoryController extends Controller
         if ($category) {
             $category->delete();
             Session::flash('success', 'Category Deleted');
-            return redirect()->route('category.index');
         }
+        return redirect()->route('category.index');
     }
 }

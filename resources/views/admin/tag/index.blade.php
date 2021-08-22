@@ -39,7 +39,6 @@
                                     <th style="width: 5%">#</th>
                                     <th style="width: 50%">Name</th>
                                     <th style="width: 20%">Slug</th>
-                                    <th style="width: 15%">Post Count</th>
                                     <th style="width: 10%">Action</th>
                                 </tr>
                             </thead>
@@ -49,11 +48,10 @@
                                         <td>{{ $key+1 }}</td>
                                         <td>{{ $tag->name }}</td>
                                         <td>{{ $tag->slug }}</td>
-                                        <td>{{ $tag->id }}</td>
                                         <td class="d-flex">
                                             {{-- <a href="{{ route('$tag.show', [$tag->id]) }}" class="btn btn-info btn-sm mr-1"><i class="fas fa-eye"></i></a> --}}
-                                            <a href="{{ route('$tag.edit', [$tag->id]) }}" class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
-                                            <form action="{{ route('$tag.destroy', [$tag->id]) }}" method="POST">
+                                            <a href="{{ route('tag.edit', [$tag->id]) }}" class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
+                                            <form action="{{ route('tag.destroy', [$tag->id]) }}" method="POST">
                                                 @method('DELETE')
                                                 @csrf  
                                                 <button type="submit" class="btn btn-danger btn-sm mr-1"><i class="fas fa-trash"></i></button>
@@ -61,7 +59,7 @@
                                         </td>
                                     </tr>
                                 @empty
-                                   <td colspan="5" class="text-danger text-center">No Tags found</td>
+                                   <td colspan="4" class="text-danger text-center">No Tags found</td>
                                 @endforelse
                             </tbody>
                         </table>
