@@ -196,13 +196,12 @@
     @yield('script')
     <script>
         @if(Session::has('success'))
-        toastr.success("{{ Session::get('success') }}")
+            toastr.success("{{ Session::get('success') }}")
         @endif
 
-        // $(document).ready(function () {
-        //     bsCustomFileInput.init();
-        // });
-
+        $(document).ready(function () {
+            bsCustomFileInput.init();
+        });
     </script>
 </body>
 

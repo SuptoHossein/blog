@@ -66,7 +66,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('post.index') }}">
                         <i class="nav-icon fas fa-pen-square"></i>
                         <p>
                             Post

@@ -49,7 +49,7 @@ class CategoryController extends Controller
         $category = Category::create([
             'name' => $request->name,
             'slug' => Str::slug($request->name, '-'),
-            'description' => $request->description,     
+            'description' => $request->description,
         ]);
 
         Session::flash('success', 'Category Created');
@@ -88,7 +88,7 @@ class CategoryController extends Controller
     public function update(Request $request, Category $category)
     {
         $this->validate($request, [
-            'name' => "required|unique:categories,name,$category->name"
+            'name' => "required|unique:categories,name,$category->id"
         ]);
 
         $category->name = $request->name;

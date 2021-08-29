@@ -39,7 +39,8 @@
                             <div class="col-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
                                 <form action="{{ route('category.update', [$category->id]) }}" method="POST">
                                     @csrf
-                                    @method('PUT')                                    <div class="card-body">
+                                    @method('PUT')
+                                    <div class="card-body">
                                         @include('includes.error')
                                         <div class="form-group">
                                             <label for="name">Category Name</label>
