@@ -55,7 +55,7 @@
                                             <a href="{{ route('category.edit', [$category->id]) }}" class="btn btn-success btn-sm mr-1"><i class="fas fa-edit"></i></a>
                                             <form action="{{ route('category.destroy', [$category->id]) }}" method="POST">
                                                 @method('DELETE')
-                                                @csrf  
+                                                @csrf
                                                 <button type="submit" class="btn btn-danger btn-sm mr-1"><i class="fas fa-trash"></i></button>
                                             </form>
                                         </td>
@@ -70,6 +70,7 @@
                     </div>
                     <!-- /.card-body -->
                 </div>
+                {{ $categories->links() }}
             </div>
             <!-- /.col-md-6 -->
         </div>

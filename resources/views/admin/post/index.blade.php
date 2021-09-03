@@ -36,8 +36,8 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th style="width: 5%">#</th>
-                                    <th style="width: 15%">Image</th>
+                                    <th style="width: 2%">#</th>
+                                    <th style="width: 10%">Image</th>
                                     <th style="width: 50%">Title</th>
                                     <th style="width: 10%">Category</th>
                                     <th style="width: 10%">Author</th>
@@ -74,7 +74,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                       <td colspan="6" class="text-danger text-center">No Post found</td>
+                                       <td colspan="7" class="text-danger text-center">No Post found</td>
                                     </tr>
                                 @endforelse
                             </tbody>
@@ -82,6 +82,11 @@
                     </div>
                     <!-- /.card-body -->
                 </div>
+
+                {{-- Pagination --}}
+                {{ $posts->links() }}
+
+
             </div>
             <!-- /.col-md-6 -->
         </div>
