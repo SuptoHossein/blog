@@ -49,7 +49,7 @@
                                         <td>{{ $key+1 }}</td>
                                         <td>
                                             <div style="max-width: 70px;max-height: 70px;overflow: hidden;">
-                                                <img src="{{ asset('storage/post/'.$user->image) }}" class="img-fluid">
+                                                <img src="{{ asset('storage/user/'.$user->image) }}" class="img-fluid">
                                             </div>
                                         </td>
                                         <td>{{ $user->name }}</td>
