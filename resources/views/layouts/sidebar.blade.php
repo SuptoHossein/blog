@@ -84,7 +84,7 @@
 
                 <li class="nav-header">Your Account</li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('user.profile') }}">
                         <i class="nav-icon far fa-user"></i>
                         <p>
                             Your Profile
