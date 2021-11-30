@@ -44,6 +44,9 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
+
+        // dd("ok");
+
         // validation
         $this->validate($request, [
             'title' => 'required|unique:posts,title',

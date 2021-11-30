@@ -50,12 +50,12 @@
                                     <tr>
                                         <td>{{ $key+1 }}</td>
                                         <td>
-                                            {{-- <div style="max-width: 70px;max-height: 70px;overflow: hidden;">
-                                                <img src="{{ asset('storage/post/'.$post->image) }}" class="img-fluid">
-                                            </div> --}}
                                             <div style="max-width: 70px;max-height: 70px;overflow: hidden;">
-                                                <img src="{{ asset($post->image) }}" class="img-fluid">
+                                                <img src="{{ asset('storage/post/'.$post->image) }}" class="img-fluid">
                                             </div>
+                                            {{-- <div style="max-width: 70px;max-height: 70px;overflow: hidden;">
+                                                <img src="{{ asset($post->image) }}" class="img-fluid">
+                                            </div> --}}
                                         </td>
                                         <td>{{ $post->title }}</td>
                                         <td>{{ $post->category->name }}</td>
