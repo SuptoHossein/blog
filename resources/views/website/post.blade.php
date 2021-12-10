@@ -1,8 +1,8 @@
 ﻿@extends('layouts.website')
 
 @section('content')
-{{-- <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url({{ asset('storage/post/'.$post->image) }})"> --}}
-<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url({{ asset($post->image) }})">
+<div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url({{ asset('storage/post/'.$post->image) }})">
+{{-- <div class="site-cover site-cover-sm same-height overlay single-page" style="background-image: url({{ asset($post->image) }})"> --}}
     <div class="container">
         <div class="row same-height justify-content-center">
             <div class="col-md-12 col-lg-10">
@@ -224,8 +224,7 @@
                             @foreach ($posts as $post)
                                 <li>
                                     <a href="">
-                                        <img src="{{ asset($post->image) }}" alt="Image placeholder"
-                                            class="mr-4">
+                                        <img src="{{ asset('storage/post/'.$post->image) }}" alt="Image placeholder" class="mr-4">
                                         <div class="text">
                                             <h4>{{ $post->title }}</h4>
                                             <div class="post-meta">
