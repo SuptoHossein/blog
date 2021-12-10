@@ -53,13 +53,13 @@
                                                        <!-- <label for="customFile">Custom File</label> -->
                                                        <div class="custom-file">
                                                            <label class="custom-file-label" for="logo">Choose File</label>
-                                                           <input type="file" class="custom-file-input" name="logo" id="customFile">
+                                                           <input type="file" class="custom-file-input" name="site_logo" id="customFile">
                                                        </div>
                                                    </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div style="max-width: 100px;max-height: 100px;overflow: hidden;margin-left: auto">
-                                                        <img src="{{ asset('storage/sitelogo/' . $setting->logo) }}" class="img-fluid" alt="">
+                                                        <img src="{{ asset('storage/sitelogo/' . $setting->site_logo) }}" class="img-fluid" alt="">
                                                     </div>
                                                 </div>
                                             </div>

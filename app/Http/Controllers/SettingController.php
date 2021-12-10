@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Setting;
 use Illuminate\Http\Request;
+use Session;
 
 class SettingController extends Controller
 {
@@ -31,6 +32,7 @@ class SettingController extends Controller
 
         // dd($request->all());
 
+// dd('hi');
 
         $this->validate($request, [
             'name' => 'required',
@@ -41,12 +43,11 @@ class SettingController extends Controller
         $setting->update($request->all());
 
         // image upload
-        if ($request->has('logo')) {
-            $image = $request->image;
+        if ($request->has('site_logo')) {
+            $image = $request->site_logo;
             $imageNewName = time() . '.' . $image->getClientOriginalExtension();
             $image->move('storage/sitelogo/', $imageNewName);
-            // $post->image = '/storage/post/' . $imageNewName; // dose not working....
-            $setting->image = $imageNewName;
+            $setting->site_logo = $imageNewName;
             $setting->save();
         }
 
