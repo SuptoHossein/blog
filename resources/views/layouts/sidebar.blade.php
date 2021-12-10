@@ -82,6 +82,15 @@
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('setting.edit') }}">
+                        <i class="nav-icon fas fa-cog"></i>
+                        <p>
+                            Setting
+                        </p>
+                    </a>
+                </li>
+
                 <li class="nav-header">Your Account</li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('user.profile') }}">

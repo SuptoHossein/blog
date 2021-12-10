@@ -30,4 +30,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
     Route::resource('user', 'UserController');
     Route::get('/profile', 'UserController@profile')->name('user.profile');
     Route::post('/profile', 'UserController@profileUpdate')->name('user.profile.update');
+
+    // Settings route
+    Route::get('setting', 'SettingController@edit')->name('setting.edit');
 });
