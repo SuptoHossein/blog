@@ -38,3 +38,4 @@ class CreateSettingsTable extends Migration
         Schema::dropIfExists('settings');
     }
 }
+

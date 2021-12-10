@@ -33,4 +33,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
 
     // Settings route
     Route::get('setting', 'SettingController@edit')->name('setting.edit');
+    Route::post('setting', 'SettingController@update')->name('setting.update');
 });

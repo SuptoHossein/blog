@@ -36,30 +36,30 @@
                     <div class="card-body p-0">
                         <div class="row">
                             <div class="col-12 col-lg-6 offset-lg-3 col-md-8 offset-md-2">
-                                <form action="{{ route('post.update', [$setting->id]) }}" method="POST" enctype="multipart/form-data">
+                                <form action="{{ route('setting.update') }}" method="POST" enctype="multipart/form-data">
                                     @csrf
                                     <div class="card-body">
                                         @include('includes.error')
                                         <div class="form-group">
-                                            <label for="title">Post Title</label>
-                                            <input type="text" name="title" class="form-control" id="exampleInputEmail1" value="{{ $setting->title }}">
+                                            <label for="name">Site Name</label>
+                                            <input type="text" name="name" class="form-control" id="exampleInputEmail1" value="{{ $setting->name }}">
                                         </div>
                                         <div class="form-group">
                                             <div class="row">
                                                 <div class="col-8">
-                                                    <label for="image">Image</label>
+                                                    <label for="image">Site Logo</label>
 
                                                     <div class="form-group">
                                                        <!-- <label for="customFile">Custom File</label> -->
                                                        <div class="custom-file">
-                                                           <label class="custom-file-label" for="customFile">Choose File</label>
-                                                           <input type="file" class="custom-file-input" name="image" id="customFile">
+                                                           <label class="custom-file-label" for="logo">Choose File</label>
+                                                           <input type="file" class="custom-file-input" name="logo" id="customFile">
                                                        </div>
                                                    </div>
                                                 </div>
                                                 <div class="col-4">
                                                     <div style="max-width: 100px;max-height: 100px;overflow: hidden;margin-left: auto">
-                                                        <img src="{{ asset('storage/post/' . $setting->image) }}" class="img-fluid" alt="">
+                                                        <img src="{{ asset('storage/sitelogo/' . $setting->logo) }}" class="img-fluid" alt="">
                                                     </div>
                                                 </div>
                                             </div>
@@ -70,10 +70,49 @@
 
 
                                         <div class="form-group">
-                                            <label for="description">Post Description</label>
-                                            <textarea id="summernote" name="description" class="form-control" id="" rows="3"
-                                                placeholder="Post description"> {{ $setting->description }} </textarea>
+                                            <label for="description">Site Description</label>
+                                            <textarea name="description" class="form-control" id="" rows="3" placeholder="Post description"> {{ $setting->description }} </textarea>
                                         </div>
+
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="facebook">Facebook</label>
+                                                    <input type="text" name="facebook" value="{{ $setting->facebook }}" class="form-control" placeholder="facebook">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="twitter">Twitter</label>
+                                                    <input type="text" name="twitter" value="{{ $setting->twitter }}" class="form-control" placeholder="twitter">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="instagram">Instagram</label>
+                                                    <input type="text" name="instagram" value="{{ $setting->instagram }}" class="form-control" placeholder="instagram">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="raddit">Raddit</label>
+                                                    <input type="text" name="raddit" value="{{ $setting->raddit }}" class="form-control" placeholder="raddit">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="email">Email</label>
+                                                    <input type="text" name="email" value="{{ $setting->email }}" class="form-control" placeholder="email">
+                                                </div>
+                                            </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="copyright">Copyright</label>
+                                                    <input type="text" name="copyright" value="{{ $setting->copyright }}" class="form-control" placeholder="copyright">
+                                                </div>
+                                            </div>
+                                        </div>
+
                                     </div>
                                     <!-- /.card-body -->
 
