@@ -32,7 +32,7 @@ class SettingController extends Controller
 
         // dd($request->all());
 
-// dd('hi');
+        // dd('hi');
 
         $this->validate($request, [
             'name' => 'required',

@@ -24,6 +24,8 @@ class CreateSettingsTable extends Migration
             $table->string('raddit')->nullable();
             $table->string('email')->nullable();
             $table->string('copyright')->nullable();
+            $table->string('phone')->nullable();
+            $table->string('address')->nullable();
             $table->timestamps();
         });
     }

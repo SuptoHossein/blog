@@ -111,6 +111,19 @@
                                                     <input type="text" name="copyright" value="{{ $setting->copyright }}" class="form-control" placeholder="copyright">
                                                 </div>
                                             </div>
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="phone">Contact Number</label>
+                                                    <input type="text" name="phone" value="{{ $setting->phone }}" class="form-control" placeholder="Contact Phone">
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6">
+                                                <div class="form-group">
+                                                    <label for="address">Location</label>
+                                                    <textarea name="address" class="form-control" id="" rows="1"> {{ $setting->address }} </textarea>
+                                                </div>
+                                            </div>
                                         </div>
 
                                     </div>
