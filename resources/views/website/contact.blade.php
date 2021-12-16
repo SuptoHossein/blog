@@ -20,33 +20,34 @@
     <div class="container">
         <div class="row">
             <div class="col-md-7 mb-5">
-                <form action="#" class="p-5 bg-white">
+                <form action="{{ route('website.contact') }}" method="POST" class="p-5 bg-white">
+                    @csrf
                     <div class="row form-group">
-                        <div class="col-md-6 mb-3 mb-md-0">
-                            <label class="text-black" for="fname">First Name</label>
-                            <input type="text" id="fname" class="form-control">
-                        </div>
-                        <div class="col-md-6">
-                            <label class="text-black" for="lname">Last Name</label>
-                            <input type="text" id="lname" class="form-control">
+                        @include('includes.error')
+                        @if(Session::has('message-success'))
+                            <div class="alert alert-success">{{ Session::get('message-success') }}</div>
+                        @endif
+                        <div class="col-md-12">
+                            <label class="text-black" for="fname">Name</label>
+                            <input type="text" name="name" id="fname" class="form-control" placeholder="Name">
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label class="text-black" for="email">Email</label>
-                            <input type="email" id="email" class="form-control">
+                            <input type="email" name="email" id="email" class="form-control" placeholder="Email">
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label class="text-black" for="subject">Subject</label>
-                            <input type="subject" id="subject" class="form-control">
+                            <input type="subject" name="subject" id="subject" class="form-control" placeholder="Subject">
                         </div>
                     </div>
                     <div class="row form-group">
                         <div class="col-md-12">
                             <label class="text-black" for="message">Message</label>
-                            <textarea name="message" id="message" cols="30" rows="7" class="form-control"
+                            <textarea name="message" name="message" id="message" cols="30" rows="7" class="form-control"
                                 placeholder="Write your notes or questions here..."></textarea>
                         </div>
                     </div>
