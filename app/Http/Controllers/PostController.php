@@ -45,9 +45,9 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        // dd("ok");
+        // dd($request->all());
 
-        // validation
+        //validation
         $this->validate($request, [
             'title' => 'required|unique:posts,title',
             'image' => 'required|image',
@@ -55,7 +55,7 @@ class PostController extends Controller
             'category' => 'required'
         ]);
 
-        // post save to db
+        //post save to db
         $post = Post::create([
             'title' => $request->title,
             'slug' => Str::slug($request->title),
