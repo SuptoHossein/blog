@@ -35,4 +35,9 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function() {
     // Settings route
     Route::get('setting', 'SettingController@edit')->name('setting.edit');
     Route::post('setting', 'SettingController@update')->name('setting.update');
+
+    // Contact message
+    Route::resource('/contact', 'ContactController');
+    // Route::get('/contact', 'ContactController@show');
+    // Route::get('/contact', 'ContactController@destroy');
 });

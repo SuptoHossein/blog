@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Contact;
+use Session;
 use Illuminate\Http\Request;
 
 class ContactController extends Controller
@@ -14,7 +15,8 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        $messages = Contact::latest()->get();
+        return view('admin.contact.index', compact('messages'));
     }
 
     /**
@@ -46,7 +48,12 @@ class ContactController extends Controller
      */
     public function show(Contact $contact)
     {
-        //
+        // $contact = Contact::find($id);
+        if($contact) {
+            return view('admin.contact.show', compact('contact'));
+        } else {
+            return redirect()->back();
+        }
     }
 
     /**
